@@ -40,7 +40,7 @@ class Numeric
             );
         $this->_scale = $scale;
 
-        if ((int) $value > self::MAX_VALUE) {
+        if ((int)(string) $value > self::MAX_VALUE) {
             throw new MaxValueLimitedException;
         }
     }
