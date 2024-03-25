@@ -1,5 +1,7 @@
 <?php
 
+namespace O21\Numeric\Helpers;
+
 use O21\Numeric\Numeric;
 
 if (! function_exists('num')) {
@@ -8,6 +10,6 @@ if (! function_exists('num')) {
      */
     function num(string|float|int|Numeric $value, ?int $scale = null): Numeric
     {
-        return new O21\Numeric\Numeric($value, $scale);
+        return new Numeric($value, $scale);
     }
 }

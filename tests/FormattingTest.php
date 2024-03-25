@@ -4,6 +4,8 @@ namespace O21\Numeric\Tests;
 
 use PHPUnit\Framework\TestCase;
 
+use function O21\Numeric\Helpers\num;
+
 class FormattingTest extends TestCase
 {
     private const LONG_FLOAT = 0.0000000000025;

@@ -4,6 +4,8 @@ namespace O21\Numeric\Concerns;
 
 use O21\Numeric\Numeric;
 
+use function O21\Numeric\Helpers\num;
+
 trait Comparisons
 {
     public function equals(string|float|int|Numeric $value): bool
