@@ -2,68 +2,35 @@
 
 namespace O21\Numeric\Concerns;
 
+use Brick\Math\BigNumber;
 use O21\Numeric\Numeric;
 
-use function O21\Numeric\Helpers\num;
+use function O21\Numeric\Helpers\to_bn;
 
 trait Comparisons
 {
-    public function equals(string|float|int|Numeric $value): bool
+    public function equals(string|float|int|Numeric|BigNumber $value): bool
     {
-        return bccomp((string) $this, (string) (new self($value)), $this->_scale) === 0;
+        return $this->bn->isEqualTo(to_bn($value));
     }
 
     public function greaterThan(string|float|int|Numeric $value): bool
     {
-        return bccomp((string) $this, (string) (new self($value)), $this->_scale) === 1;
+        return $this->bn->isGreaterThan(to_bn($value));
     }
 
     public function lessThan(string|float|int|Numeric $value): bool
     {
-        return bccomp((string) $this, (string) (new self($value)), $this->_scale) === -1;
+        return $this->bn->isLessThan(to_bn($value));
     }
 
     public function greaterThanOrEqual(string|float|int|Numeric $value): bool
     {
-        return bccomp((string) $this, (string) (new self($value)), $this->_scale) >= 0;
+        return $this->bn->isGreaterThanOrEqualTo(to_bn($value));
     }
 
     public function lessThanOrEqual(string|float|int|Numeric $value): bool
     {
-        return bccomp((string) $this, (string) (new self($value)), $this->_scale) <= 0;
-    }
-
-    /**
-     * Get the minimum value of the given values
-     *
-     * @param  string|float|int|Numeric[]  ...$values
-     */
-    public function min(...$values): Numeric
-    {
-        $min = $this;
-        foreach ($values as $value) {
-            if (num($value)->lessThan($min)) {
-                $min = $value;
-            }
-        }
-
-        return new self($min);
-    }
-
-    /**
-     * Get the maximum value of the given values
-     *
-     * @param  string|float|int|Numeric[]  ...$values
-     */
-    public function max(...$values): Numeric
-    {
-        $max = $this;
-        foreach ($values as $value) {
-            if (num($value)->greaterThan($max)) {
-                $max = $value;
-            }
-        }
-
-        return new self($max);
+        return $this->bn->isLessThanOrEqualTo(to_bn($value));
     }
 }

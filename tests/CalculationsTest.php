@@ -34,7 +34,7 @@ class CalculationsTest extends TestCase
     {
         $num = $this->longFloat();
 
-        $this->assertEquals('0.000000025', $num->div('0.0001')->scale(10)->get());
+        $this->assertEquals('0.000000025', $num->div('0.0001')->get());
     }
 
     protected function longFloat(): Numeric

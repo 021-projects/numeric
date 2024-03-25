@@ -6,6 +6,8 @@ use O21\Numeric\Numeric;
 use PHPUnit\Framework\TestCase;
 
 use function O21\Numeric\Helpers\num;
+use function O21\Numeric\Helpers\num_min;
+use function O21\Numeric\Helpers\num_max;
 
 class ComparisonsTest extends TestCase
 {
@@ -57,12 +59,12 @@ class ComparisonsTest extends TestCase
             $biggerNumbers[] = (clone $num)->add(num('0.00000001')->mul($i))->get();
         }
 
-        $this->assertEquals($min, $num->min($biggerNumbers[0])->get());
-        $this->assertEquals($min, $num->min(...$biggerNumbers)->get());
-        $this->assertEquals($min, $num->min('0.00000026')->get());
-        $this->assertEquals($min, $num->min(0.00000026)->get());
-        $this->assertEquals($min, $num->min(1)->get());
-        $this->assertEquals('0.00000024', $num->min('0.00000024')->get());
+        $this->assertEquals($min, num_min($num, $biggerNumbers[0])->get());
+        $this->assertEquals($min, num_min($num, ...$biggerNumbers)->get());
+        $this->assertEquals($min, num_min($num, '0.00000026')->get());
+        $this->assertEquals($min, num_min($num, 0.00000026)->get());
+        $this->assertEquals($min, num_min($num, 1)->get());
+        $this->assertEquals('0.00000024', num_min($num, '0.00000024')->get());
     }
 
     public function testMax(): void
@@ -76,11 +78,11 @@ class ComparisonsTest extends TestCase
             $smallerNumbers[] = (clone $num)->sub(num('0.00000001')->mul($i))->get();
         }
 
-        $this->assertEquals($max, $num->max($smallerNumbers[0])->get());
-        $this->assertEquals($max, $num->max(...$smallerNumbers)->get());
-        $this->assertEquals($max, $num->max('0.00000024')->get());
-        $this->assertEquals($max, $num->max(0.00000024)->get());
-        $this->assertEquals(1, $num->max(1)->get());
+        $this->assertEquals($max, num_max($num, $smallerNumbers[0])->get());
+        $this->assertEquals($max, num_max($num, ...$smallerNumbers)->get());
+        $this->assertEquals($max, num_max($num, '0.00000024')->get());
+        $this->assertEquals($max, num_max($num, 0.00000024)->get());
+        $this->assertEquals(1, num_max($num, 1)->get());
     }
 
     protected function longFloat(): Numeric
