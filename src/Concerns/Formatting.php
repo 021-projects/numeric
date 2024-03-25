@@ -30,7 +30,7 @@ trait Formatting
 
     public function scale(
         int $scale,
-        RoundingMode $roundingMode = RoundingMode::UNNECESSARY
+        int $roundingMode = RoundingMode::UNNECESSARY
     ): self {
         $this->bn = $this->bn->toScale($scale, $roundingMode);
 
