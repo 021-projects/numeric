@@ -20,11 +20,15 @@ class Numeric
         $this->bn = to_bn($value);
     }
 
-    public function get(): string
+    public function get(...$opts): string
     {
+        $raw = $opts['raw'] ?? false;
+
         $value = $this->bn;
 
-        if (method_exists($value, 'stripTrailingZeros')) {
+        if (! $raw
+            && method_exists($value, 'stripTrailingZeros')
+        ) {
             $value = $value->stripTrailingZeros();
         }
 
