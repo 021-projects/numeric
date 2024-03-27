@@ -38,4 +38,16 @@ class FormattingTest extends TestCase
                 ->get(raw: true)
         );
     }
+
+    public function testScaleWithoutRoundingMode(): void
+    {
+        $num = num(self::LONG_FLOAT);
+
+        $this->assertEquals('0.0000000000025', $num->get());
+        $this->assertEquals(
+            '0.000000000',
+            $num->scale(9)
+                ->get(raw: true)
+        );
+    }
 }
