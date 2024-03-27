@@ -1,5 +1,6 @@
 {
     "name": "021/numeric",
+    "description": "A PHP library for working with precise numbers.",
     "type": "library",
     "license": "MIT",
     "autoload": {
