@@ -37,6 +37,6 @@ class Numeric
 
     public function __toString(): string
     {
-        return $this->bn->jsonSerialize();
+        return $this->get();
     }
 }
