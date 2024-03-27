@@ -10,9 +10,17 @@ if (! function_exists('num')) {
     /**
      * Create a new Numeric instance for safe calculations
      */
-    function num(string|float|int|Numeric $value, ?int $scale = null): Numeric
-    {
-        return new Numeric($value, $scale);
+    function num(
+        string|float|int|Numeric|BigNumber $value,
+        ?int $scale = null
+    ): Numeric {
+        $num = new Numeric(to_bn($value));
+
+        if ($scale !== null) {
+            $num->scale($scale);
+        }
+
+        return $num;
     }
 }
 
