@@ -2,6 +2,7 @@
 
 namespace O21\Numeric\Tests;
 
+use Brick\Math\RoundingMode;
 use O21\Numeric\Numeric;
 use PHPUnit\Framework\TestCase;
 
@@ -35,6 +36,13 @@ class CalculationsTest extends TestCase
         $num = $this->longFloat();
 
         $this->assertEquals('0.000000025', $num->div('0.0001')->get());
+    }
+
+    public function testDivideWithoutRoundingMode(): void
+    {
+        $num = $this->longFloat()->scale(22);
+
+        $this->assertEquals('0.000000000000025', $num->div(100)->get());
     }
 
     protected function longFloat(): Numeric
