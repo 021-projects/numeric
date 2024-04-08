@@ -2,7 +2,7 @@
 
 A PHP library to convenient work with arbitrary precision numbers.
 <p>
-<a href="https://github.com/021-projects/numeric/actions/workflows/tests-php-8.1.yml"><img src="https://github.com/021-projects/numeric/actions/workflows/tests-php-8.1.yml/badge.svg?branch=master" alt="Tests"></a>
+<a href="https://github.com/021-projects/numeric/actions/workflows/tests-php-8.1.yml"><img src="https://github.com/021-projects/numeric/actions/workflows/tests-php-8.1.yml/badge.svg?branch=main" alt="Tests"></a>
 <a href="https://packagist.org/packages/021/numeric"><img src="https://img.shields.io/packagist/dt/021/numeric" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/021/numeric"><img src="https://img.shields.io/packagist/v/021/numeric" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/021/numeric"><img src="https://img.shields.io/packagist/l/021/numeric" alt="License"></a>
