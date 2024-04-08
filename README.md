@@ -36,7 +36,7 @@ echo $number->add('0.544')->get();
 ### Calculations
 
 All computational functions accept as an argument a value of one of the following
-types: `string|float|int|\O21\Numeric\Numeric|\Brick\Math\BigNumber`.
+types: `string`, `float`, `int`, `\O21\Numeric\Numeric`, `\Brick\Math\BigNumber`.
 
 | Function | Description                     |
 |----------|---------------------------------|
@@ -48,15 +48,15 @@ types: `string|float|int|\O21\Numeric\Numeric|\Brick\Math\BigNumber`.
 ### Comparisons
 
 All comparison functions accept as an argument a value of one of the following
-types: `string|float|int|\O21\Numeric\Numeric|\Brick\Math\BigNumber`.
+types: `string`, `float`, `int`, `\O21\Numeric\Numeric`, `\Brick\Math\BigNumber`.
 
-| Function             | Description                                                                                          |
-|----------------------|------------------------------------------------------------------------------------------------------|
-| `equals`             | Checks if two values are equal. It returns true if the values are equal and false otherwise.         |
-| `greaterThan`        | Compares two values and returns true if the first value is greater than the second one.              |
-| `lessThan`           | Compares two values and returns true if the first value is less than the second one.                 |
-| `greaterThanOrEqual` | 	Compares two values and returns true if the first value is greater than or equal to the second one. |
-| `lessThanOrEqual`    | Compares two values and returns true if the first value is less than or equal to the second one.     |
+| Function             | Description                                                                                         |
+|----------------------|-----------------------------------------------------------------------------------------------------|
+| `equals`             | Checks if two values are equal. It returns true if the values are equal and false otherwise.        |
+| `greaterThan`        | Compares two values and returns true if the first value is greater than the second one.             |
+| `lessThan`           | Compares two values and returns true if the first value is less than the second one.                |
+| `greaterThanOrEqual` | Compares two values and returns true if the first value is greater than or equal to the second one. |
+| `lessThanOrEqual`    | Compares two values and returns true if the first value is less than or equal to the second one.    |
 
 ### Formatting
 
@@ -72,9 +72,9 @@ types: `string|float|int|\O21\Numeric\Numeric|\Brick\Math\BigNumber`.
 
 Namespace: `O21\Numeric\Helpers`
 
-| Function  | Description                                                                                                                                |
-|-----------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `num`     | Creates a new `Numeric` instance                                                                                                           |
-| `num_min` | Returns a minimum value from a given values. Support any of these types: `string\|float\|int\|\O21\Numeric\Numeric\|\Brick\Math\BigNumber` |
-| `num_max` | Returns a maximum value from a given values. Support any of these types: `string\|float\|int\|\O21\Numeric\Numeric\|\Brick\Math\BigNumber` |
-| `to_bn`   | Converts any of these types `string\|float\|int\|\O21\Numeric\Numeric\|\Brick\Math\BigNumber` to `\Brick\Math\BigNumber`                   |
+| Function  | Description                                                                                                                                        |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `num`     | Creates a new `Numeric` instance                                                                                                                   |
+| `num_min` | Returns a minimum value from a given values. Support any of these types: `string`, `float`, `int`, `\O21\Numeric\Numeric`, `\Brick\Math\BigNumber` |
+| `num_max` | Returns a maximum value from a given values. Support any of these types: `string`, `float`, `int`, `\O21\Numeric\Numeric`, `\Brick\Math\BigNumber` |
+| `to_bn`   | Converts any of these types `string`, `float`, `int`, `\O21\Numeric\Numeric`, `\Brick\Math\BigNumber` to `\Brick\Math\BigNumber`                   |
