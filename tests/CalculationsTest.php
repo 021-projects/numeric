@@ -2,7 +2,6 @@
 
 namespace O21\Numeric\Tests;
 
-use Brick\Math\RoundingMode;
 use O21\Numeric\Numeric;
 use PHPUnit\Framework\TestCase;
 
