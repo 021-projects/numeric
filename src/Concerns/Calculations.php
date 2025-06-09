@@ -34,7 +34,7 @@ trait Calculations
     public function div(
         string|float|int|Numeric $value,
         ?int $scale = null,
-        int $roundingMode = RoundingMode::CEILING
+        int|RoundingMode $roundingMode = RoundingMode::CEILING
     ): self {
         $this->bn = $this->bn->dividedBy(to_bn($value), $scale, $roundingMode);
 
