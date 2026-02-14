@@ -5,6 +5,7 @@ namespace O21\Numeric;
 use Brick\Math\BigNumber;
 
 use function O21\Numeric\Helpers\to_bn;
+use function O21\Numeric\Helpers\num;
 
 class Numeric
 {
@@ -45,8 +46,13 @@ class Numeric
         return $value->jsonSerialize();
     }
 
+    public function clone(): self
+    {
+        return num($this->bn);
+    }
+
     public function __toString(): string
     {
-        return $this->get();
+        return $this->str();
     }
 }
