@@ -20,7 +20,17 @@ class Numeric
         $this->bn = to_bn($value);
     }
 
+    /**
+     * @deprecated Use str() instead
+     * @param ...$opts
+     * @return string
+     */
     public function get(...$opts): string
+    {
+        return $this->str(...$opts);
+    }
+
+    public function str(...$opts): string
     {
         $raw = $opts['raw'] ?? false;
 

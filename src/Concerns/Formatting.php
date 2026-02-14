@@ -17,6 +17,11 @@ trait Formatting
         return $bn->abs()->jsonSerialize();
     }
 
+    public function abs(): string
+    {
+        return $this->positive();
+    }
+
     public function negative(): string
     {
         $bn = $this->bn;
@@ -26,6 +31,13 @@ trait Formatting
         }
 
         return '-'.$bn->abs()->jsonSerialize();
+    }
+
+    public function neg(): self
+    {
+        $this->bn = $this->bn->negated();
+
+        return $this;
     }
 
     public function scale(
